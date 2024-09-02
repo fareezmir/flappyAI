@@ -2,6 +2,8 @@
 
 This repository contains the source code for an AI-powered Flappy Bird game, where the AI uses the NEAT (NeuroEvolution of Augmenting Topologies) algorithm to learn how to navigate through dynamically moving pipes. The AI continuously evolves to improve its performance over multiple generations, aiming to achieve the highest possible score.
 
+![Flappy Bird AI Demo](flappy_bird_demo.gif)
+
 ## Key Features
 - **NEAT Algorithm**: Implements the NEAT algorithm to evolve the neural network controlling the bird, enabling it to adapt and improve over time through multiple generations.
 - **Dynamic Pipes**: Pipes move vertically with varying speeds, increasing the complexity and challenge for the AI for an added twist.
