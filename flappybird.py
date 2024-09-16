@@ -26,16 +26,16 @@ passed = False
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 
 # Background
-background = pygame.image.load("bird_ai/background.png").convert()
+background = pygame.image.load("background.png").convert()
 background = pygame.transform.scale(background, (WIDTH, HEIGHT+20))
-ground = pygame.image.load("bird_ai/ground.png").convert()
+ground = pygame.image.load("ground.png").convert()
 ground = pygame.transform.scale(ground, (WIDTH, 150))
 ground_mask = pygame.mask.from_surface(ground)
 
 # Sound
-flap_sfx = pygame.mixer.Sound("bird_ai/flap.mp3")
-score_sfx = pygame.mixer.Sound("bird_ai/score.mp3")
-collide_sfx = pygame.mixer.Sound("bird_ai/collide.mp3")
+flap_sfx = pygame.mixer.Sound("flap.mp3")
+score_sfx = pygame.mixer.Sound("score.mp3")
+collide_sfx = pygame.mixer.Sound("collide.mp3")
 
 pygame.display.set_caption("Flappy Bird AI")
 # pygame.mouse.set_visible(False)
@@ -58,13 +58,13 @@ class Bird():
         self.flapPower = -15
         self.gravity = 1.5
 
-        self.flappyUp = pygame.image.load("bird_ai/bird_up.png").convert()
+        self.flappyUp = pygame.image.load("bird_up.png").convert()
         self.flappyUp = pygame.transform.scale(self.flappyUp, (70, 50))
 
-        self.flappyDown = pygame.image.load("bird_ai/bird_down.png").convert()
+        self.flappyDown = pygame.image.load("bird_down.png").convert()
         self.flappyDown = pygame.transform.scale(self.flappyDown, (70, 50))
 
-        self.flappyMid = pygame.image.load("bird_ai/bird_mid.png").convert()
+        self.flappyMid = pygame.image.load("bird_mid.png").convert()
         self.flappyMid = pygame.transform.scale(self.flappyMid, (70, 50))
 
         self.images = [self.flappyUp, self.flappyMid, self.flappyDown]
@@ -138,7 +138,7 @@ class Pipe:
 
         self.positions = [(self.x, self.random_y1, self.pipey_vel_1), (self.x2, self.random_y2, self.pipey_vel_2), (self.x3, self.random_y3, self.pipey_vel_3)]
 
-        self.pipe_img = pygame.image.load("bird_ai/pipe.png").convert_alpha()  
+        self.pipe_img = pygame.image.load("pipe.png").convert_alpha()  
         self.pipe_img = pygame.transform.scale(self.pipe_img, (100, 500)) 
         
         self.topPipe = pygame.transform.flip(self.pipe_img, False, True)
@@ -344,7 +344,7 @@ def eval_genomes(genomes, config):
     
 def run_neat(config):
     global p
-    p = neat.Checkpointer.restore_checkpoint('bird_ai/neat-checkpoint-46')
+    p = neat.Checkpointer.restore_checkpoint('neat-checkpoint-46')
     #p = neat.Population(config)
     p.add_reporter(neat.StdOutReporter(True)) #report the data (seee generation, avg fitness, best fitness, etc)
     stats = neat.StatisticsReporter()
