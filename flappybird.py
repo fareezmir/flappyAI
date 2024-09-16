@@ -48,12 +48,9 @@ RED = (255, 0, 0)
 TRANSPARENT = (0, 0, 0, 0)
 SKY = (0, 153, 204, 255)
 
-class Bird(pygame.sprite.Sprite):
+class Bird():
 
     def __init__(self):
-
-        #DELETE
-        pygame.sprite.Sprite.__init__(self)
 
         self.x = 100
         self.y = HEIGHT // 2
